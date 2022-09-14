@@ -1,0 +1,83 @@
+create database turmac;
+use turmac;
+create table  (
+
+    cod_cli int primary key auto_increment,
+    nome_cli varchar(40) not null,
+    endereco varchar(40) null,
+    cidade varchar(20),
+    cep varchar(8),
+    uf char(2)
+    );
+    
+    create table produto (
+	cod_prod int primary key auto_increment,
+    unit_prod char(3) not null,
+    desc_prod varchar(20) not null,
+    val_unit decimal(9,2)
+  );  
+	create table vendedor (
+		cod_vend int primary key auto_increment,
+        nome_vend varchar(40) not null,
+        sal_fixo decimal(9,2),
+        faixa_comiss char(1)
+        
+        
+);
+describe vendedor;
+desc_vendedor;
+
+show tables;
+create table pedido (
+		num_prod int primary key auto_increment,
+		prazo_entr int not null,
+        fk_cod_cli int,
+        fk_cod_vend int,
+        foreign key (fk_cod_cli) references cliente(cod_cli),
+        foreign key (fk_cod_vend) references vendedor(cod_vend)
+        
+        );
+create table item_pedido (
+	qtd_ped int not null,
+    fk_num_ped int,
+    fk_cod_prod int,
+    foreign key (fk_num_ped) references pedido(num_ped),
+    foreign key (fk_cod_prod) references produto(cod_prod)
+    );
+	desc cliente;
+    select * from cliente;
+    insert into cliente(nome_cli,endereco,cidade,cep,uf) 
+			values ('Vinicius,av santo amaro, 300,','São Paulo','SP');
+			values('Rafael,av morumbi, 150,','São Paulo', 'SP');
+            
+   describe vendedor;
+   select * from vendedor;
+   insert into vendedor (nome_vend,sal_fixo,faixa_comiss) values 
+   ('Fabio, 125',125.23,'A');
+   
+   insert into vendedor (nome_vend,sal_fixo,faixa_comiss) values 
+   ('Kleber,50',890.58,'A');
+   
+   describe produto;
+   insert into produto (unit_prod,desc_prod,val_unit) values
+   ('PC', 'Caneta',3.45);
+   select * from produto;
+   insert into produto (unit_prod,desc_prod,val_unit) values
+   ('PC','Lapis',2.63);
+    select * from cliente;
+    describe pedido
+    insert into pedido (prazo_entr,fk_cod_cli,fk_cod_vend) values (10,1,1);
+    
+    select * from pedido;
+    describe item_pedido;
+    insert into item_pedido (qtd_ped,fk_num_ped,fk_cod_prod) values (5,2,1);
+    
+    
+
+select * from cliente;
+insert  into cliente (nome_cli,endereco,cidade,cep,uf) 
+            values ('João pedro','Av. Euzebio,200','São Paulo','01003004','SP');
+insert  into cliente (nome_cli,endereco,cidade,cep,uf) 
+            values ('Italo da silva','Av. Euzebio,200','São Paulo','01003004','SP');
+update cliente set endereco = 'Av. Euzebio,200' where cod_cli = 1;
+update forne set endereco = 'Av. Euzebio,200' where cod_cli = 1;       
