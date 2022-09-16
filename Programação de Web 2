@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Mirror Fashion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">     
+    </head>
+    <body>
+        
+        
+        </body>
+   </html>
+   
+   <header>
+       <hl><img src="img/logo.png" alt="Logo da Mirror Fashion"></hl>
+       <p class="sacola">
+       Nenhuma item na sacola de compras  <img src="img/sacola.png" alt=""/>
+       </p>
+       
+       
+       <nav class="menu-opcoes>
+    </ul>  
+       <li><a href="#">Sua Conta</a></li>
+       <li><a href"#">Lista de Desesjos</a></li>
+       <li><a href"#">Cartão Fidelidade</a></li>
+       <li><a href"sobre.html">Sobre</a></li>
+       <li><a href"#">Ajuda</a></li>
+       
+    </ul>
+       </nav>
+      </header> 
+</body>
+       
