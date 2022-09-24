@@ -1,0 +1,47 @@
+private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        char c = evt.getKeyChar();
+        
+ if ( ((c < '0') || (c > '9')) && (c !=KeyEvent.VK_BACK_SPACE))
+ {
+    evt.consume(); 
+    lblStatus.setText("Campo ID permite somente números!");
+ }else{
+     lblStatus.setText("");
+ }
+    }                                    
+
+    private void txtIDFocusGained(java.awt.event.FocusEvent evt) {                                  
+        txtID.setBackground(Color.yellow);
+        
+    }                                 
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {                                      
+       txtID.setBackground(Color.white);
+    }                                     
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(txtDescrição.getText().length()>=10)
+{
+    evt.consume();
+    lblStatus.setText("Máximo de 10 caracteres atingido!");
+}
+    }                                    
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {                                        
+        txtDescrição.setText(txtDescrição.getText().toUpperCase());
+    }                                       
+
+    private void lblStatusMouseClicked(java.awt.event.MouseEvent evt) {                                       
+       int x = evt.getX();
+       int y = evt.getY();
+       lblStatus.setText("Coordenadas: " + x + "," + y);
+       
+    }                                      
+
+    private void jTextField1MouseEntered(java.awt.event.MouseEvent evt) {                                         
+      txtID.setBackground(Color.red);
+    }                                        
+
+    private void jTextField1MouseExited(java.awt.event.MouseEvent evt) {                                        
+        txtID.setBackground(Color.white);
+    } 
