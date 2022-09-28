@@ -1,0 +1,96 @@
+create database clinica;
+use clinica;
+create table ambulatorios(
+ nroa int primary key auto_increment,
+ andar int not null,
+ capacidade smallint); 
+
+select * from ambulatorios;
+insert into ambulatorios (andar_amb, capacidade_amb)
+values  ('1', '30'),
+		('1', '50'),
+        ('2', '40'),
+        ('2', '25'),
+        ('2', '55');
+
+
+create table medicos (
+ codm int primary key auto_increment,
+ nome_med varchar(40) not null,
+ idade_med smallint not null,
+ especialidade_med char(20),
+ CPF_med varchar(11) unique,
+ cidade_med varchar(30),
+ fk_nroa int,
+ foreign key (fk_nroa) references ambulatorios(nroa)
+ );
+
+select * from medicos;
+insert into medicos (nome_med, idade_med, especialidade_med, CPF_med, cidade_med, nroa_int)
+	values	('João', '40', 'ortopedia',	'10001010', 'Forianopolis', '1'),
+			('Maria', '42', 'traumatologia', '10001010', 'Blumenau', '2'),
+            ('Pedro', '51', 'pediatria', '10001010', 'São Jorge', '2'),
+            ('Carlos', '28', 'optopedia', '10001010','Joiville', '4'),
+            ('Marcia', '33', 'neurologia', '10001010', 'Biguacu', '3');
+            
+            
+            
+ create table pacientes (           
+codp int primary key auto_increment,
+ nome_pac varchar(40) not null,
+ idade_pac smallint,
+ CPF_pac char(20) unique,
+ cidade_pac varchar(11) unique,
+ doenca_pac varchar(40) not null
+ );
+            
+select * from pacientes;
+insert into pacientes (nome_pac, idade_pac, cidade_pac, CPF_pac, doenca_pac)
+	values 	('Ana,', '20', 'Forianoplois', '2000020000', 'gripe'),
+			('Paulo,', '24', 'Palhoca', '20000202000', 'fratura'),
+            ('Lucia,', '30', 'Biguacu', '2200020000', 'tendinite'),
+			('Carlos', '28', 'Joinvile', '11000011000', 'sarampo');
+            
+
+select * from funcionarios;
+create table funcionarios (           
+codf int primary key auto_increment,
+ nome_med varchar(40) not null,
+ idade_med smallint,
+ CPF_fun char(20) unique,
+ cidade_fun varchar(30),
+ salario_fun decimal(10,2),
+ cargo_fun varchar (20)
+ );
+
+select * from  funcionarios;
+insert into funcionarios (nome_fun, idade_fun, cidade_fun, salario,fun, CPF_fun)
+	values ('Rita', '32', 'Sao Jose', '1200', '2001110000'),
+			('Maria', '55', 'Palhoca', '1220', '2001110021'),
+			('Caio', '45', 'Forianopolis', '1100', '2301110000'),
+			('Carlos', '44', 'Forianopolis', '1200', '200111601'),
+			('Paulo', '33', 'Forianopolis', '2500', '235111601');
+
+select * from consultas;
+create table consultas (
+ num_con int primary key auto_increment,
+fK_codm int,
+fk_codp int,
+data_con date,
+hora time,
+foreign key (fk_codm) references  medico(codigo_medico),
+foreign key (fk_codf) references  paciente(codp)
+ );
+ 
+ insert into consultas (data_con, hora_con)
+ values ('2006/06/12', '14:00'),
+		('2006/06/13', '10:00'),
+        ('2006/06/13', '11:00'),
+        ('2006/06/14', '14:00'),
+        ('2006/06/14', '17:00'),
+        ('2006/06/19', '18:00'),
+        ('2006/06/12', '10:00'),
+		('2006/06/19', '13:00'),
+        ('2006/06/20', '13:00'),
+        ('2006/06/22', '13:00');
+        
