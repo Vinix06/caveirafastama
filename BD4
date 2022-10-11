@@ -8,7 +8,7 @@ create table ambulatorios(
 select * from ambulatorios;
 insert into ambulatorios (andar_amb, capacidade_amb)
 values  ('1', '30'),
-		('1', '50'),
+	('1', '50'),
         ('2', '40'),
         ('2', '25'),
         ('2', '55');
@@ -27,8 +27,8 @@ create table medico (
 
 select * from medico;
 insert into medico (nome_med, idade_med, especialidade_med, CPF_med, cidade_med, nroa_int)
-	values	('João', '40', 'ortopedia',	'10001010', 'Forianopolis', '1'),
-			('Maria', '42', 'traumatologia', '10001010', 'Blumenau', '2'),
+	values('João', '40', 'ortopedia',	'10001010', 'Forianopolis', '1'),
+		('Maria', '42', 'traumatologia', '10001010', 'Blumenau', '2'),
             ('Pedro', '51', 'pediatria', '10001010', 'São Jorge', '2'),
             ('Carlos', '28', 'optopedia', '10001010','Joiville', '4'),
             ('Marcia', '33', 'neurologia', '10001010', 'Biguacu', '3');
@@ -47,9 +47,9 @@ codp int primary key auto_increment,
 select * from pacientes;
 insert into pacientes (nome_pac, idade_pac, cidade_pac, CPF_pac, doenca_pac)
 	values 	('Ana,', '20', 'Forianoplois', '2000020000', 'gripe'),
-			('Paulo,', '24', 'Palhoca', '20000202000', 'fratura'),
-            ('Lucia,', '30', 'Biguacu', '2200020000', 'tendinite'),
-			('Carlos', '28', 'Joinvile', '11000011000', 'sarampo');
+		('Paulo,', '24', 'Palhoca', '20000202000', 'fratura'),
+            	('Lucia,', '30', 'Biguacu', '2200020000', 'tendinite'),
+		('Carlos', '28', 'Joinvile', '11000011000', 'sarampo');
 
 
 select * from funcionario;
@@ -84,13 +84,13 @@ foreign key (fk_codf) references  paciente(codp)
 
  insert into consulta (data_con, hora_con)
  values ('2006/06/12', '14:00'),
-		('2006/06/13', '10:00'),
+	('2006/06/13', '10:00'),
         ('2006/06/13', '11:00'),
         ('2006/06/14', '14:00'),
         ('2006/06/14', '17:00'),
         ('2006/06/19', '18:00'),
         ('2006/06/12', '10:00'),
-		('2006/06/19', '13:00'),
+	('2006/06/19', '13:00'),
         ('2006/06/20', '13:00'),
         ('2006/06/22', '13:00');
 
